@@ -18,10 +18,11 @@ def index():
 
 @app.route("/scrape")
 def scrape():
-    # Scrape Mars Data
+    # Initiate Scraping of Mars Data
+    mars = mongo.db.mars
     mars_data = scrape_mars.scrape()
     # Store data in the collection
-    mongo.db.mars.update({}, mars_data, upsert=True)
+    mars.update({}, mars_data, upsert=True)
 
     # Return to main page to review scraping results
     return redirect("/")

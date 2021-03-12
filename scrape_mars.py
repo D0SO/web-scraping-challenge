@@ -3,8 +3,6 @@ import pandas as pd
 from splinter import Browser
 from bs4 import BeautifulSoup as Soup
 import datetime as dt
-import pymongo
-
 
 
 def init_browser():
